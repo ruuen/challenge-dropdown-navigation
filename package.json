@@ -1,0 +1,14 @@
+{
+  "name": "dropdown-navigation",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "rimraf dist && parcel",
+    "build": "rimraf dist && parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.0",
+    "parcel": "^2.10.0",
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.4"
+  }
+}
