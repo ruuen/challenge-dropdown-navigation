@@ -2,7 +2,7 @@
   "name": "dropdown-navigation",
   "source": "src/index.html",
   "scripts": {
-    "dev": "rimraf dist && parcel",
+    "dev": "rimraf dist && parcel --host 0.0.0.0",
     "build": "rimraf dist && parcel build"
   },
   "devDependencies": {
