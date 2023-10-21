@@ -18,6 +18,12 @@
       url("../fonts/epilogue-v17-latin-700.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
 // Colours
+$clr-white: rgba(255, 255, 255, 1);
+$clr-offwhite: rgba(250, 250, 250, 1);
+$clr-lightgrey: rgba(173, 173, 173, 1);
+$clr-grey: rgba(104, 104, 104, 1);
+$clr-black: rgba(21, 21, 21, 1);
+$clr-trueblack: rgba(0, 0, 0, 1);
 
 // Fonts
 $font-family: "Epilogue", sans-serif;

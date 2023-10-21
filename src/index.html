@@ -14,6 +14,115 @@
     <link rel="stylesheet" href="./scss/main.scss" />
   </head>
   <body>
-    <h1>Test</h1>
+    <header class="header">
+      <img src="./images/logo.svg" alt="Snap logo" class="header__logo" />
+      <nav class="navbar">
+        <button
+          type="button"
+          class="navbar__btn"
+          data-menu-action="open"
+          aria-expanded="false"
+          aria-controls="site-nav-menu"
+          aria-label="Open menu"
+        >
+          <img
+            src="./images/icon-menu.svg"
+            alt="Open"
+            class="navbar__btn-icon"
+            aria-hidden="true"
+          />
+        </button>
+        <div class="navbar__menu" id="site-nav-menu">
+          <ul class="navbar__site-links">
+            <li class="navbar__link-wrapper">
+              <a href="#" class="navbar__link">Careers</a>
+            </li>
+            <li class="navbar__link-wrapper">
+              <a href="#" class="navbar__link">About</a>
+            </li>
+          </ul>
+          <ul class="navbar__user-links">
+            <li class="navbar__link-wrapper">
+              <a href="#" class="navbar__link">Login</a>
+            </li>
+            <li class="navbar__link-wrapper">
+              <a href="#" class="navbar__link navbar__link--btn">Register</a>
+            </li>
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="navbar__btn navbar__btn--close"
+          data-menu-action="close"
+          aria-expanded="false"
+          aria-controls="site-nav-menu"
+          aria-label="Close menu"
+        >
+          <img
+            src="./images/icon-close-menu.svg"
+            alt="Close"
+            class="navbar__btn-icon"
+            aria-hidden="true"
+          />
+        </button>
+      </nav>
+    </header>
+    <main class="page-container">
+      <div class="hero">
+        <article class="hero__content">
+          <h1 class="hero__heading">Make remote work</h1>
+          <p class="hero__copy">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <!-- This link style can be reused from nav's register button. Might be worth changing class name to represent a link block -->
+          <a href="#" class="hero__link">Learn more</a>
+          <ul class="hero__client-logos">
+            <li class="hero__logo-wrapper">
+              <img
+                src="./images/client-databiz.svg"
+                alt="Databiz logo"
+                class="hero__logo"
+              />
+            </li>
+            <li class="hero__logo-wrapper">
+              <img
+                src="./images/client-audiophile.svg"
+                alt="Audiophile logo"
+                class="hero__logo"
+              />
+            </li>
+            <li class="hero__logo-wrapper">
+              <img
+                src="./images/client-meet.svg"
+                alt="Meet logo"
+                class="hero__logo"
+              />
+            </li>
+            <li class="hero__logo-wrapper">
+              <img
+                src="./images/client-maker.svg"
+                alt="Maker logo"
+                class="hero__logo"
+              />
+            </li>
+          </ul>
+        </article>
+        <div class="hero__img-wrapper">
+          <picture>
+            <!-- Adjust to final desktop breakpoint width in rem -->
+            <source
+              media="(min-width: 1000px)"
+              srcset="./images/image-hero-desktop.png"
+            />
+            <img
+              src="./images/image-hero-mobile.png"
+              alt="Person working on a laptop"
+              class="hero__img"
+            />
+          </picture>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

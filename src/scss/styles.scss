@@ -1,1 +1,81 @@
 @use "variables" as var;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em 1.25em;
+
+  &__logo {
+    object-fit: contain;
+  }
+}
+
+.navbar {
+  &__menu {
+    // Temporarily hiding until I do menu styles
+    display: none;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  &__btn--close {
+    // Temporarily hiding until I do menu styles
+    display: none;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2.5em;
+
+  &__content {
+    padding: 0.75em;
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: var.$font-weight-bold;
+  }
+
+  &__copy {
+    color: var.$clr-grey;
+    padding: 1.25em 0 1.5em 0;
+    font-weight: 500;
+    line-height: 1.625rem;
+    max-width: 40ch;
+    margin: auto;
+  }
+
+  &__link {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-decoration: none;
+    font-family: inherit;
+    color: var.$clr-offwhite;
+    background-color: var.$clr-black;
+    padding: 1em 1.25em;
+    border-radius: 1em;
+  }
+
+  &__client-logos {
+    padding-inline: 0;
+    padding-top: 3em;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+
+  &__img-wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
