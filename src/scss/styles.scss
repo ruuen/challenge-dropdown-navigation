@@ -1,6 +1,8 @@
 @use "variables" as var;
 
 .header {
+  position: relative;
+  z-index: 0;
   display: flex;
   justify-content: space-between;
   padding: 1.5em 1.25em;
@@ -14,6 +16,35 @@
   &__menu {
     // Temporarily hiding until I do menu styles
     display: none;
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: 100%;
+    gap: 2em;
+    background-color: rgba($color: var.$clr-black, $alpha: 0.75);
+
+    &--open {
+      display: block;
+    }
+  }
+
+  &__menu-content {
+    position: relative;
+    overflow-y: auto;
+    z-index: 20;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    min-width: 15em;
+    width: 70vw;
+    max-width: 300px;
+    height: 100%;
+    margin-left: auto;
+    padding: 1.5em;
+    background-color: var.$clr-white;
   }
 
   &__btn {
@@ -24,7 +55,85 @@
 
   &__btn--close {
     // Temporarily hiding until I do menu styles
+    // display: none;
+    margin-left: auto;
+  }
+
+  &__link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    order: 1;
+    list-style-type: none;
+    padding-inline: 0;
+
+    &--user {
+      text-align: center;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: var.$clr-grey;
+
+    &--btn {
+      display: block;
+      padding: 0.75em 1em;
+      border: 1.5px solid var.$clr-grey;
+      border-radius: 15px;
+    }
+  }
+
+  &__dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2em;
+
+    &--open {
+      .navbar__dropdown-content {
+        display: flex;
+      }
+    }
+  }
+
+  &__dropdown-icon {
+    display: inline-flex;
+  }
+
+  &__dropdown-toggle {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    gap: 1em;
+    background-color: transparent;
+    border: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0;
+    text-decoration: none;
+    color: var.$clr-grey;
+  }
+
+  &__dropdown-content {
+    // display: flex;
     display: none;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0 2em 1em 2em;
+    gap: 1.25em;
+  }
+
+  &__dropdown-link {
+    text-decoration: none;
+    color: var.$clr-grey;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  &__dropdown-link-icon {
+    width: 1.25em;
   }
 }
 
@@ -65,8 +174,7 @@
   }
 
   &__client-logos {
-    padding-inline: 0;
-    padding-top: 3em;
+    padding: 3em 0 0 0;
     list-style-type: none;
     display: flex;
     justify-content: center;

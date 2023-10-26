@@ -20,8 +20,7 @@ body {
 }
 
 img,
-picture,
-svg {
+picture {
   display: block;
   max-width: 100%;
 }
@@ -47,4 +46,11 @@ h6 {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+// Applied on the body when mobile menu is visible & focused
+// Prevents scrolling of body or scrolling past menu
+.prevent-scroll {
+  max-height: 100dvh;
+  overflow-y: hidden;
 }

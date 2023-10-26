@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon" />
     <link rel="stylesheet" href="./scss/main.scss" />
   </head>
-  <body>
+  <body class="prevent-scroll">
     <header class="header">
       <img src="./images/logo.svg" alt="Snap logo" class="header__logo" />
       <nav class="navbar">
@@ -32,39 +32,122 @@
             aria-hidden="true"
           />
         </button>
-        <div class="navbar__menu" id="site-nav-menu">
-          <ul class="navbar__site-links">
-            <li class="navbar__link-wrapper">
-              <a href="#" class="navbar__link">Careers</a>
-            </li>
-            <li class="navbar__link-wrapper">
-              <a href="#" class="navbar__link">About</a>
-            </li>
-          </ul>
-          <ul class="navbar__user-links">
-            <li class="navbar__link-wrapper">
-              <a href="#" class="navbar__link">Login</a>
-            </li>
-            <li class="navbar__link-wrapper">
-              <a href="#" class="navbar__link navbar__link--btn">Register</a>
-            </li>
-          </ul>
+        <div class="navbar__menu navbar__menu--open" id="site-nav-menu">
+          <div class="navbar__menu-content">
+            <ul class="navbar__link-group">
+              <li class="navbar__dropdown navbar__dropdown--open">
+                <button
+                  type="button"
+                  class="navbar__dropdown-toggle"
+                  aria-expanded="false"
+                  aria-controls="feature-nav-links"
+                  aria-label="Feature pages"
+                >
+                  Features
+                  <img
+                    class="navbar__dropdown-icon"
+                    src="./images/icon-arrow-down.svg"
+                    alt="Open menu icon"
+                    aria-hidden="true"
+                  />
+                </button>
+                <ul class="navbar__dropdown-content" id="feature-nav-links">
+                  <li>
+                    <a href="#" class="navbar__dropdown-link">
+                      <img
+                        src="./images/icon-todo.svg"
+                        alt=""
+                        class="navbar__dropdown-link-icon"
+                      />
+                      <span class="navbar__link-text">Todo List</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="navbar__dropdown-link">
+                      <img
+                        src="./images/icon-calendar.svg"
+                        alt=""
+                        class="navbar__dropdown-link-icon"
+                      />
+                      <span class="navbar__link-text">Calendar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="navbar__dropdown-link">
+                      <img
+                        src="./images/icon-reminders.svg"
+                        alt=""
+                        class="navbar__dropdown-link-icon"
+                      />
+                      <span class="navbar__link-text">Reminders</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="navbar__dropdown-link">
+                      <img
+                        src="./images/icon-planning.svg"
+                        alt=""
+                        class="navbar__dropdown-link-icon"
+                      />
+                      <span class="navbar__link-text">Planning</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="navbar__dropdown navbar__dropdown--open">
+                <button
+                  type="button"
+                  class="navbar__dropdown-toggle"
+                  aria-expanded="false"
+                  aria-controls="company-nav-links"
+                  aria-label="Company pages"
+                >
+                  Company
+                  <img
+                    class="navbar__dropdown-icon"
+                    src="./images/icon-arrow-down.svg"
+                    alt="Open menu icon"
+                    aria-hidden="true"
+                  />
+                </button>
+                <ul class="navbar__dropdown-content" id="company-nav-links">
+                  <li><a href="#" class="navbar__link">History</a></li>
+                  <li><a href="#" class="navbar__link">Our Team</a></li>
+                  <li><a href="#" class="navbar__link">Blog</a></li>
+                </ul>
+              </li>
+              <li class="navbar__link-wrapper">
+                <a href="#" class="navbar__link">Careers </a>
+              </li>
+              <li class="navbar__link-wrapper">
+                <a href="#" class="navbar__link">About</a>
+              </li>
+            </ul>
+            <ul class="navbar__link-group navbar__link-group--user">
+              <li>
+                <a href="#" class="navbar__link">Login</a>
+              </li>
+              <li>
+                <a href="#" class="navbar__link navbar__link--btn">Register</a>
+              </li>
+            </ul>
+            <button
+              type="button"
+              class="navbar__btn navbar__btn--close"
+              data-menu-action="close"
+              aria-expanded="false"
+              aria-controls="site-nav-menu"
+              aria-label="Close menu"
+            >
+              <img
+                src="./images/icon-close-menu.svg"
+                alt="Close"
+                class="navbar__btn-icon"
+                aria-hidden="true"
+              />
+            </button>
+          </div>
         </div>
-        <button
-          type="button"
-          class="navbar__btn navbar__btn--close"
-          data-menu-action="close"
-          aria-expanded="false"
-          aria-controls="site-nav-menu"
-          aria-label="Close menu"
-        >
-          <img
-            src="./images/icon-close-menu.svg"
-            alt="Close"
-            class="navbar__btn-icon"
-            aria-hidden="true"
-          />
-        </button>
       </nav>
     </header>
     <main class="page-container">
