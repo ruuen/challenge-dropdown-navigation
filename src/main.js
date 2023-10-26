@@ -7,10 +7,20 @@ const btnCloseMenu = document.querySelector(`.navbar__btn[data-menu-action="clos
 
 btnOpenMenu.addEventListener("click", () => toggleMobileNav(btnOpenMenu.dataset.menuAction));
 btnCloseMenu.addEventListener("click", () => toggleMobileNav(btnCloseMenu.dataset.menuAction));
+navMenu.addEventListener("click", (e) => {
+    if (e.target.id === "site-nav-menu") {
+        toggleMobileNav("close");
+    }
+})
+navMenu.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        toggleMobileNav("close");
+    }
+})
 
-function toggleMobileNav(buttonAction) {
+function toggleMobileNav(action) {
     // TODO: Confirm if you should set expanded on both buttons that toggle the element
-    if (buttonAction === "close") {
+    if (action === "close") {
         body.classList.remove("prevent-scroll");
         navMenu.classList.remove("navbar__menu--open");
         btnCloseMenu.ariaExpanded = "false";
