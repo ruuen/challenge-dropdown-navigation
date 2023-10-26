@@ -5,6 +5,7 @@
   z-index: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1.5em 1.25em;
 
   &__logo {
@@ -114,6 +115,7 @@
     padding: 0;
     text-decoration: none;
     color: var.$clr-grey;
+    width: fit-content;
   }
 
   &__dropdown-content {
