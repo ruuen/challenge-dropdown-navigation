@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon" />
     <link rel="stylesheet" href="./scss/main.scss" />
   </head>
-  <body class="prevent-scroll">
+  <body>
     <header class="header">
       <img src="./images/logo.svg" alt="Snap logo" class="header__logo" />
       <nav class="navbar">
@@ -32,10 +32,10 @@
             aria-hidden="true"
           />
         </button>
-        <div class="navbar__menu navbar__menu--open" id="site-nav-menu">
+        <div class="navbar__menu" id="site-nav-menu">
           <div class="navbar__menu-content">
             <ul class="navbar__link-group">
-              <li class="navbar__dropdown navbar__dropdown--open">
+              <li class="navbar__dropdown" tabindex="0">
                 <button
                   type="button"
                   class="navbar__dropdown-toggle"
@@ -94,7 +94,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="navbar__dropdown navbar__dropdown--open">
+              <li class="navbar__dropdown">
                 <button
                   type="button"
                   class="navbar__dropdown-toggle"
@@ -209,5 +209,6 @@
         </div>
       </div>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>
