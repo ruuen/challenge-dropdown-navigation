@@ -51,6 +51,6 @@ h6 {
 // Applied on the body when mobile menu is visible & focused
 // Prevents scrolling of body or scrolling past menu
 .prevent-scroll {
-  max-height: 100dvh;
-  overflow-y: hidden;
+  height: 100dvh;
+  overflow: hidden;
 }
