@@ -151,8 +151,9 @@
   }
 
   &__heading {
-    font-size: 2.25rem;
+    font-size: clamp(2.25rem, 5.5vw, 5rem);
     font-weight: var.$font-weight-bold;
+    text-align: inherit;
   }
 
   &__copy {
@@ -160,8 +161,10 @@
     padding: 1.25em 0 1.5em 0;
     font-weight: 500;
     line-height: 1.625rem;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     max-width: 40ch;
     margin: auto;
+    text-align: inherit;
   }
 
   &__link {
@@ -170,6 +173,7 @@
     margin: 0 auto;
     text-decoration: none;
     font-family: inherit;
+    font-size: clamp(1rem, 2vw, 1.125rem);
     color: var.$clr-offwhite;
     background-color: var.$clr-black;
     padding: 1em 1.25em;
