@@ -1,3 +1,9 @@
+const breakpointDesktop = getPixelsFromRem(56.25);
+const displayClassMenu = "navbar__menu--open";
+const displayClassDropdown = "navbar__dropdown--open";
+const classDropdown = "navbar__dropdown";
+const classPreventBodyScroll = "prevent-scroll";
+
 const body = document.querySelector("body");
 const navMenu = document.querySelector(".navbar__menu");
 const firstNavLink = navMenu.querySelector(".navbar__link-group > .navbar__dropdown > .navbar__dropdown-toggle");
@@ -20,18 +26,16 @@ navMenu.addEventListener("keydown", (e) => {
 })
 dropdownBtns.forEach(btn => btn.addEventListener("click", (e) => toggleDropdown(e.currentTarget.getAttribute("aria-controls"))));
 
-// TODO: Disable mobile nav and dropdown func via js when desktop breakpoint active
-// Desktop dropdowns handled via css through :focus-within and :hover
-// This would provide focus control, closing when clicking out of element, and clicking dropdown trigger to open/close all in one
-// I will need to add a hover event listener for the dropdown to set aria-expanded on dropdown toggle for desktop though
+window.addEventListener("resize", clearMobileNavBehaviour);
+
+// TODO: Need to add a hover event listener for the dropdown to set aria-expanded on dropdown toggle for desktop though
 
 function toggleMobileNav(action) {
-    const displayClass = "navbar__menu--open";
     // TODO: Confirm if you should set expanded on both buttons that toggle the element
     if (action === "close") {
         // Remove classes to show elements
-        body.classList.remove("prevent-scroll");
-        navMenu.classList.remove(displayClass);
+        body.classList.remove(classPreventBodyScroll);
+        navMenu.classList.remove(displayClassMenu);
         // Update aria-expanded for nav menu buttons
         btnOpenMenu.ariaExpanded = "false";
         btnCloseMenu.ariaExpanded = "false";
@@ -41,8 +45,8 @@ function toggleMobileNav(action) {
     }
 
     // Add classes to show elements
-    body.classList.add("prevent-scroll");
-    navMenu.classList.add(displayClass);
+    body.classList.add(classPreventBodyScroll);
+    navMenu.classList.add(displayClassMenu);
     // Update aria-expanded for nav menu buttons
     btnOpenMenu.ariaExpanded = "true";
     btnCloseMenu.ariaExpanded = "true";
@@ -53,16 +57,34 @@ function toggleMobileNav(action) {
 }
 
 function toggleDropdown(dropdownId) {
-    const displayClass = "navbar__dropdown--open";
-    const element = document.querySelector(`#${dropdownId}`).closest(".navbar__dropdown");
+    const element = document.querySelector(`#${dropdownId}`).closest(`.${classDropdown}`);
 
     // TODO: Set aria-expanded behaviour for opening/closing dropdowns
 
-    if (element.classList.contains(displayClass)) {
-        element.classList.remove(displayClass);
+    if (element.classList.contains(displayClassDropdown)) {
+        element.classList.remove(displayClassDropdown);
         return;
     }
 
-    element.classList.add(displayClass);
+    element.classList.add(displayClassDropdown);
 
+}
+
+// Run when window resizes
+// If window > desktop min-width breakpoint, remove open state classes for navbar menu and all dropdowns
+// Navbar is not needed and dropdowns get controlled via CSS on desktop
+function clearMobileNavBehaviour() {
+    const viewport = window.innerWidth;
+    if (viewport > breakpointDesktop) {
+        navMenu.classList.remove(displayClassMenu);
+        dropdownBtns.forEach(btn => {
+            const parent = btn.closest(`.${classDropdown}`);
+            parent.classList.remove(displayClassDropdown);
+        })
+    }
+}
+
+// Convert rem to pixels based on root font size value
+function getPixelsFromRem(remInt) {
+    return remInt * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
