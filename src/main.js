@@ -20,6 +20,11 @@ navMenu.addEventListener("keydown", (e) => {
 })
 dropdownBtns.forEach(btn => btn.addEventListener("click", (e) => toggleDropdown(e.currentTarget.getAttribute("aria-controls"))));
 
+// TODO: Disable mobile nav and dropdown func via js when desktop breakpoint active
+// Desktop dropdowns handled via css through :focus-within and :hover
+// This would provide focus control, closing when clicking out of element, and clicking dropdown trigger to open/close all in one
+// I will need to add a hover event listener for the dropdown to set aria-expanded on dropdown toggle for desktop though
+
 function toggleMobileNav(action) {
     const displayClass = "navbar__menu--open";
     // TODO: Confirm if you should set expanded on both buttons that toggle the element
@@ -51,10 +56,13 @@ function toggleDropdown(dropdownId) {
     const displayClass = "navbar__dropdown--open";
     const element = document.querySelector(`#${dropdownId}`).closest(".navbar__dropdown");
 
+    // TODO: Set aria-expanded behaviour for opening/closing dropdowns
+
     if (element.classList.contains(displayClass)) {
         element.classList.remove(displayClass);
         return;
     }
 
     element.classList.add(displayClass);
+
 }

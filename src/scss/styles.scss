@@ -90,11 +90,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 2em;
+    // Gap is initially zero to remove element space
+    gap: 0;
 
     &--open {
+      gap: 2em;
+
       .navbar__dropdown-content {
-        display: flex;
+        visibility: visible;
+        max-height: none;
+        padding: 0 2em 1em 2em;
       }
     }
   }
@@ -119,11 +124,15 @@
   }
 
   &__dropdown-content {
-    // display: flex;
-    display: none;
+    // Visibility, max-height and padding are set to remove element space but allow animation
+    visibility: hidden;
+    max-height: 0;
+    padding: 0;
+
+    display: flex;
+    padding-inline: 0;
     flex-direction: column;
     list-style-type: none;
-    padding: 0 2em 1em 2em;
     gap: 1.25em;
   }
 

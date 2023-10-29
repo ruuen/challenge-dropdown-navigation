@@ -4,7 +4,7 @@
   // Nullify scroll lock class if layout shifts during session
   .prevent-scroll {
     height: auto;
-    overflow: auto;
+    overflow: visible;
   }
 
   body {
@@ -41,7 +41,7 @@
       width: auto;
       height: auto;
       background-color: transparent;
-      overflow: auto;
+      overflow: visible;
     }
 
     &__menu-content {
@@ -52,6 +52,7 @@
       max-width: none;
       flex-direction: row;
       justify-content: space-between;
+      overflow: visible;
     }
 
     &__link-group {
@@ -60,8 +61,22 @@
       gap: 2.25em;
     }
 
+    &__link,
+    &__dropdown-link,
+    &__dropdown-toggle {
+      &:hover {
+        color: var.$clr-black;
+      }
+    }
+
     &__dropdown {
       position: relative;
+
+      &--open {
+        .navbar__dropdown-content {
+          padding: 1.5em 1.75em;
+        }
+      }
     }
 
     &__dropdown-toggle {
@@ -70,7 +85,17 @@
 
     &__dropdown-content {
       position: absolute;
-      width: fit-content;
+      visibility: hidden;
+      max-height: none;
+      z-index: 30;
+      width: max-content;
+      padding: 1em 2em;
+      top: 2.5em;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var.$clr-white;
+      box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
     }
   }
 
