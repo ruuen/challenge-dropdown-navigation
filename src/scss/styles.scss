@@ -15,7 +15,6 @@
 
 .navbar {
   &__menu {
-    // Temporarily hiding until I do menu styles
     display: none;
     position: absolute;
     overflow: hidden;
@@ -56,8 +55,6 @@
   }
 
   &__btn--close {
-    // Temporarily hiding until I do menu styles
-    // display: none;
     margin-left: auto;
   }
 
@@ -93,10 +90,11 @@
     // Gap is initially zero to remove element space
     gap: 0;
 
+    // On mobile, when open state applied, show the dropdown
     &--open {
       gap: 2em;
 
-      .navbar__dropdown-content {
+      .navbar__dropdown-content-wrapper {
         visibility: visible;
         max-height: none;
         padding: 0 2em 1em 2em;
@@ -123,12 +121,14 @@
     width: fit-content;
   }
 
-  &__dropdown-content {
+  &__dropdown-content-wrapper {
     // Visibility, max-height and padding are set to remove element space but allow animation
     visibility: hidden;
     max-height: 0;
     padding: 0;
+  }
 
+  &__dropdown-content {
     display: flex;
     padding-inline: 0;
     flex-direction: column;
