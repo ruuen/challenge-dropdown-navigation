@@ -2,6 +2,7 @@ const breakpointDesktop = getPixelsFromRem(56.25);
 const displayClassMenu = "navbar__menu--open";
 const displayClassDropdown = "navbar__dropdown--open";
 const classDropdown = "navbar__dropdown";
+const classDropdownToggle = "navbar__dropdown-toggle";
 const classPreventBodyScroll = "prevent-scroll";
 
 const body = document.querySelector("body");
@@ -10,7 +11,8 @@ const firstNavLink = navMenu.querySelector(".navbar__link-group > .navbar__dropd
 
 const btnOpenMenu = document.querySelector(`.navbar__btn[data-menu-action="open"]`);
 const btnCloseMenu = document.querySelector(`.navbar__btn[data-menu-action="close"]`);
-const dropdownBtns = document.querySelectorAll(".navbar__dropdown-toggle");
+const dropdownBtns = document.querySelectorAll(`.${classDropdownToggle}`);
+const dropdownMenus = document.querySelectorAll(`.${classDropdown}`);
 
 btnOpenMenu.addEventListener("click", () => toggleMobileNav(btnOpenMenu.dataset.menuAction));
 btnCloseMenu.addEventListener("click", () => toggleMobileNav(btnCloseMenu.dataset.menuAction));
@@ -25,13 +27,9 @@ navMenu.addEventListener("keydown", (e) => {
     }
 })
 dropdownBtns.forEach(btn => btn.addEventListener("click", (e) => toggleDropdown(e.currentTarget.getAttribute("aria-controls"))));
-
 window.addEventListener("resize", clearMobileNavBehaviour);
 
-// TODO: Need to add a hover event listener for the dropdown to set aria-expanded on dropdown toggle for desktop though
-
 function toggleMobileNav(action) {
-    // TODO: Confirm if you should set expanded on both buttons that toggle the element
     if (action === "close") {
         // Remove classes to show elements
         body.classList.remove(classPreventBodyScroll);
@@ -58,16 +56,16 @@ function toggleMobileNav(action) {
 
 function toggleDropdown(dropdownId) {
     const element = document.querySelector(`#${dropdownId}`).closest(`.${classDropdown}`);
-
-    // TODO: Set aria-expanded behaviour for opening/closing dropdowns
+    const toggleButton = element.querySelector(`.${classDropdownToggle}`);
 
     if (element.classList.contains(displayClassDropdown)) {
         element.classList.remove(displayClassDropdown);
+        toggleButton.ariaExpanded = "false";
         return;
     }
 
     element.classList.add(displayClassDropdown);
-
+    toggleButton.ariaExpanded = "true";
 }
 
 // Run when window resizes
@@ -77,9 +75,12 @@ function clearMobileNavBehaviour() {
     const viewport = window.innerWidth;
     if (viewport > breakpointDesktop) {
         navMenu.classList.remove(displayClassMenu);
+        btnOpenMenu.ariaExpanded = "false";
+        btnCloseMenu.ariaExpanded = "false";
         dropdownBtns.forEach(btn => {
             const parent = btn.closest(`.${classDropdown}`);
             parent.classList.remove(displayClassDropdown);
+            btn.ariaExpanded = "false";
         })
     }
 }
