@@ -99,11 +99,17 @@
         max-height: none;
         padding: 0 2em 1em 2em;
       }
+
+      .navbar__dropdown-icon {
+        transform: rotate(180deg);
+      }
     }
   }
 
   &__dropdown-icon {
     display: inline-flex;
+    transform: rotate(0deg);
+    transition: transform 350ms ease;
   }
 
   &__dropdown-toggle {

@@ -1,5 +1,11 @@
 @use "variables" as var;
 
+@media (prefers-reduced-motion) {
+  .navbar__dropdown-icon {
+    transition: none;
+  }
+}
+
 @media (min-width: var.$breakpoint-desktop) {
   // Nullify scroll lock class if layout shifts during session
   .prevent-scroll {
@@ -77,6 +83,10 @@
         .navbar__dropdown-content-wrapper {
           visibility: visible;
           max-height: none;
+        }
+
+        .navbar__dropdown-icon {
+          transform: rotate(180deg);
         }
       }
     }
