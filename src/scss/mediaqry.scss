@@ -4,6 +4,10 @@
   .navbar__dropdown-icon {
     transition: none;
   }
+
+  .navbar__dropdown-content-wrapper {
+    transition: none;
+  }
 }
 
 @media (min-width: var.$breakpoint-desktop) {
@@ -83,6 +87,7 @@
         .navbar__dropdown-content-wrapper {
           visibility: visible;
           max-height: none;
+          opacity: 1;
         }
 
         .navbar__dropdown-icon {
