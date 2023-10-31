@@ -205,6 +205,7 @@
     padding: 1em 1.25em;
     border-radius: 1em;
     outline: 1px solid var.$clr-black;
+    transition: background-color 200ms ease;
 
     &:hover {
       background-color: transparent;
