@@ -1,5 +1,15 @@
 @use "variables" as var;
 
+@media (prefers-reduced-motion) {
+  .navbar__dropdown-icon {
+    transition: none;
+  }
+
+  .navbar__dropdown-content-wrapper {
+    transition: none;
+  }
+}
+
 @media (min-width: var.$breakpoint-desktop) {
   // Nullify scroll lock class if layout shifts during session
   .prevent-scroll {
@@ -61,14 +71,6 @@
       gap: 2.25em;
     }
 
-    &__link,
-    &__dropdown-link,
-    &__dropdown-toggle {
-      &:hover {
-        color: var.$clr-black;
-      }
-    }
-
     &__dropdown {
       position: relative;
 
@@ -77,6 +79,15 @@
         .navbar__dropdown-content-wrapper {
           visibility: visible;
           max-height: none;
+          opacity: 1;
+        }
+
+        .navbar__dropdown-icon {
+          transform: rotate(180deg);
+        }
+
+        .navbar__dropdown-toggle {
+          color: var.$clr-black;
         }
       }
     }

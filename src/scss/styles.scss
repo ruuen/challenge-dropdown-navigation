@@ -98,12 +98,19 @@
         visibility: visible;
         max-height: none;
         padding: 0 2em 1em 2em;
+        opacity: 1;
+      }
+
+      .navbar__dropdown-icon {
+        transform: rotate(180deg);
       }
     }
   }
 
   &__dropdown-icon {
     display: inline-flex;
+    transform: rotate(0deg);
+    transition: transform 350ms ease;
   }
 
   &__dropdown-toggle {
@@ -126,6 +133,8 @@
     visibility: hidden;
     max-height: 0;
     padding: 0;
+    opacity: 0.3;
+    transition: opacity 250ms ease-out;
   }
 
   &__dropdown-content {
@@ -146,6 +155,14 @@
 
   &__dropdown-link-icon {
     width: 1.25em;
+  }
+
+  &__link,
+  &__dropdown-link,
+  &__dropdown-toggle {
+    &:hover {
+      color: var.$clr-black;
+    }
   }
 }
 
@@ -187,6 +204,17 @@
     background-color: var.$clr-black;
     padding: 1em 1.25em;
     border-radius: 1em;
+    outline: 1px solid var.$clr-black;
+    transition: background-color 200ms ease;
+
+    &:hover {
+      background-color: transparent;
+      color: var.$clr-black;
+    }
+
+    &:focus {
+      outline: solid 2px blueviolet;
+    }
   }
 
   &__client-logos {
