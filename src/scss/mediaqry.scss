@@ -71,14 +71,6 @@
       gap: 2.25em;
     }
 
-    &__link,
-    &__dropdown-link,
-    &__dropdown-toggle {
-      &:hover {
-        color: var.$clr-black;
-      }
-    }
-
     &__dropdown {
       position: relative;
 
@@ -92,6 +84,10 @@
 
         .navbar__dropdown-icon {
           transform: rotate(180deg);
+        }
+
+        .navbar__dropdown-toggle {
+          color: var.$clr-black;
         }
       }
     }
