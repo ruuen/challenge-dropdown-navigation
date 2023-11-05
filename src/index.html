@@ -12,6 +12,20 @@
     />
     <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon" />
     <link rel="stylesheet" href="./scss/main.scss" />
+    <!-- Preload desktop image when viewport width > desktop breakpoint -->
+    <link
+      rel="preload"
+      as="image"
+      href="./images/image-hero-desktop.webp"
+      media="(min-width: 56.25rem)"
+    />
+    <!-- Preload mobile image when viewport width < desktop breakpoint -->
+    <link
+      rel="preload"
+      as="image"
+      href="./images/image-hero-mobile.webp"
+      media="(max-width: 56.249rem)"
+    />
   </head>
   <body>
     <header class="header">
@@ -205,10 +219,20 @@
           <picture>
             <source
               media="(min-width: 56.25rem)"
-              srcset="./images/image-hero-desktop.png"
+              type="image/webp"
+              srcset="./images/image-hero-desktop.webp"
+            />
+            <source
+              media="(min-width: 56.25rem)"
+              type="image/jpg"
+              srcset="./images/image-hero-desktop.jpg"
+            />
+            <source
+              type="image/webp"
+              srcset="./images/image-hero-mobile.webp"
             />
             <img
-              src="./images/image-hero-mobile.png"
+              src="./images/image-hero-mobile.jpg"
               alt="Person working on a laptop"
               class="hero__img"
               width="375"
