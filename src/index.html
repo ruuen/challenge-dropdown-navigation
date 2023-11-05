@@ -48,14 +48,13 @@
         </button>
         <div class="navbar__menu" id="site-nav-menu">
           <div class="navbar__menu-content">
-            <ul class="navbar__link-group">
+            <ul class="navbar__link-group" aria-label="Site pages">
               <li class="navbar__dropdown" tabindex="-1">
                 <button
                   type="button"
                   class="navbar__dropdown-toggle"
                   aria-expanded="false"
                   aria-controls="feature-nav-links"
-                  aria-label="Feature pages"
                 >
                   Features
                   <img
@@ -77,7 +76,10 @@
                           alt=""
                           class="navbar__dropdown-link-icon"
                         />
-                        <span class="navbar__link-text">Todo List</span>
+                        <!-- Todo list link is labelled so SRs announce "to do" as two words and not one -->
+                        <span class="navbar__link-text" aria-label="To do list"
+                          >Todo List</span
+                        >
                       </a>
                     </li>
                     <li>
@@ -119,7 +121,6 @@
                   class="navbar__dropdown-toggle"
                   aria-expanded="false"
                   aria-controls="company-nav-links"
-                  aria-label="Company pages"
                 >
                   Company
                   <img
@@ -147,7 +148,10 @@
                 <a href="#" class="navbar__link">About</a>
               </li>
             </ul>
-            <ul class="navbar__link-group navbar__link-group--user">
+            <ul
+              class="navbar__link-group navbar__link-group--user"
+              aria-label="User account actions"
+            >
               <li>
                 <a href="#" class="navbar__link">Login</a>
               </li>
@@ -184,38 +188,38 @@
           </p>
           <!-- This link style can be reused from nav's register button. Might be worth changing class name to represent a link block -->
           <a href="#" class="hero__link">Learn more</a>
-          <ul class="hero__client-logos">
+          <ul class="hero__client-logos" aria-label="Featured clients">
             <li class="hero__logo-wrapper">
               <img
                 src="./images/client-databiz.svg"
-                alt="Databiz logo"
+                alt="Databiz"
                 class="hero__logo"
               />
             </li>
             <li class="hero__logo-wrapper">
               <img
                 src="./images/client-audiophile.svg"
-                alt="Audiophile logo"
+                alt="Audiophile"
                 class="hero__logo"
               />
             </li>
             <li class="hero__logo-wrapper">
               <img
                 src="./images/client-meet.svg"
-                alt="Meet logo"
+                alt="Meet"
                 class="hero__logo"
               />
             </li>
             <li class="hero__logo-wrapper">
               <img
                 src="./images/client-maker.svg"
-                alt="Maker logo"
+                alt="Maker"
                 class="hero__logo"
               />
             </li>
           </ul>
         </article>
-        <div class="hero__img-wrapper">
+        <div class="hero__img-wrapper" aria-hidden="true">
           <picture>
             <source
               media="(min-width: 56.25rem)"
