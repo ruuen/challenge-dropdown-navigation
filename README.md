@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor]()
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/intro-section-with-accessible-dropdown-navigation-using-scss-waWCqiz6IU)
 - Live Site URL: [Netlify](https://rd-challenge-dropdown-navigation.netlify.app/)
 
 ## My process
@@ -80,6 +80,8 @@ I ran into a fun Safari bug where the `outline` property doesn't obey an element
 - [Safari 16.4 release notes containing fix](https://webkit.org/blog/13966/webkit-features-in-safari-16-4/)
 
 This was my first time using Parcel and it's a lovely little build tool for these static site challenges - will definitely be using this in projects moving forward & exploring it more.
+
+I am not enjoying SCSS nesting syntax as much as I used to and I'm going to move away from using this in future, and looking at some better solutions & ways other people use SCSS responsibly.
 
 ### Useful resources
 
