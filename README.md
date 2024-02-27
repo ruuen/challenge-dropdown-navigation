@@ -42,7 +42,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/intro-section-with-accessible-dropdown-navigation-using-scss-waWCqiz6IU)
-- Live Site URL: [Netlify](https://rd-challenge-dropdown-navigation.netlify.app/)
+- Live Site URL: [Netlify](https://mbr-challenge-dropdown-navigation.pages.dev/)
 
 ## My process
 
@@ -109,5 +109,5 @@ Both scripts will hard delete the existing `/dist` directory before triggering a
 
 ## Author
 
-- Frontend Mentor - [@ruuendigital](https://www.frontendmentor.io/profile/ruuendigital)
+- Frontend Mentor - [@ruuen](https://www.frontendmentor.io/profile/ruuen)
 - Twitter - [@maxruuen](https://www.twitter.com/maxruuen)
